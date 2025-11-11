@@ -1,0 +1,360 @@
+/* Reset default spacing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Set up background and centering */
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #ffffff, #e8ecf0);
+  font-family: 'Poppins', sans-serif;
+}
+
+
+
+/* Container for text */
+.container {
+  text-align: center;
+  background: #fff;
+  padding: 60px 100px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  margin-bottom: 40px;
+  transition: 0.3s ease;
+}
+
+
+
+/* Main title */
+h1 {
+  font-size: 60px;
+  color: brown;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+
+/* Subtitle text */
+p {
+  font-size: 18px;
+  color: black;
+  margin-top: 10px;
+}
+
+/* EX boxes container */
+.ex-boxes {
+  display: flex;
+  gap: 20px; /* space between boxes */
+}
+
+/* Individual EX box */
+.ex-box {
+  display: flex;              /* center text vertically and horizontally */
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;      /* remove underline */
+  color: inherit;             /* inherit text color */
+  text-align: center;
+  background: #fff;
+  padding: 30px 50px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+/* Hover animation same as main container */
+.ex-box:hover {
+  transform: scale(1.02);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* EX box text */
+.ex-box span {
+  font-size: 20px;
+  font-weight: 600; /* bold text */
+  color: brown;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* EX Silho */
+.ex-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  text-align: center;
+  background: #fff;
+  padding: 30px 50px;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15); /* stronger silhouette */
+  transition: 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.ex-box:hover {
+  transform: scale(1.05);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+}
+
+/* Optional glowing edge */
+.ex-box::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  background: radial-gradient(circle at top left, rgba(165, 42, 42, 0.15), transparent 70%);
+  z-index: -1;
+}
+
+/*EX Borders */
+.ex-box {
+  border: 2px solid transparent;
+  transition: border 0.3s ease;
+}
+
+.ex-box:hover {
+  border: 2px solid brown
+}
+
+/* Background Wallpaper */
+body {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: url("Kaui.jpg") no-repeat center center/cover;
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden;
+}
+
+/* Head Animation */
+h1 {
+  font-size: 60px;
+  background: linear-gradient(90deg, brown, orange, brown);
+  background-size: 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientMove 3s ease infinite;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0%; }
+  50% { background-position: 100%; }
+  100% { background-position: 0%; }
+}
+
+/* Head Animation 2 */
+.container {
+  position: relative;
+  text-align: center;
+  background: #fff;
+  padding: 60px 100px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  margin-bottom: 40px;
+  transition: 0.3s ease;
+  z-index: 1;
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 4px;
+  border-radius: 20px;
+  background: linear-gradient(90deg, brown, orange, gold, brown);
+  background-size: 300%;
+  animation: borderMove 5s linear infinite;
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  z-index: -1;
+}
+
+@keyframes borderMove {
+  0% { background-position: 0%; }
+  100% { background-position: 300%; }
+}
+
+/*Search Button */
+.floating-search {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Hidden by default */
+.search-input {
+  width: 0;
+  padding: 6px 0;
+  border: 1px solid #ccc;
+  border-radius: 15px 0 0 15px;
+  outline: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  transition: width 0.3s ease, padding 0.3s ease;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Button styling */
+.search-btn {
+  width: 45px;
+  height: 45px;
+  border: none;
+  border-radius: 50%;
+  background-color: brown;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transition: 0.3s ease;
+}
+
+.search-btn:hover {
+  background-color: goldenrod;
+  transform: scale(1.1);
+}
+
+/* Expand input when container is focused (CSS only) */
+/* Container floating on top-right */
+.floating-search {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  z-index: 1000;
+  background: transparent;
+}
+
+/* Search input hidden by default */
+/* Container floating on top-right */
+.floating-search {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Search input hidden by default */
+.search-input {
+  width: 0;
+  padding: 6px 0;
+  border: 1px solid #ccc;
+  border-radius: 25px 0 0 25px;
+  outline: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  transition: width 0.5s ease, padding 0.5s ease, opacity 0.5s ease;
+  opacity: 0;
+  pointer-events: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Modern circular search button with border */
+.search-btn {
+  width: 45px;
+  height: 45px;
+  border: 2px solid brown;      /* border line */
+  border-radius: 50%;
+  background-color: #fff;        /* white background for elegance */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+  transition: 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+}
+
+.search-btn:hover {
+  border-color: goldenrod;       /* smooth color change */
+  transform: scale(1.1);
+}
+
+/* Expand input when button/input focused (CSS only) */
+.floating-search:focus-within .search-input {
+  width: 180px;
+  padding: 6px 12px;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* About Us */
+.about-btn {
+  position: fixed;          /* float at top-left */
+  top: 20px;
+  left: 20px;
+  padding: 10px 18px;
+  background-color: brown;  /* main theme color */
+  color: #fff;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  border-radius: 25px;      /* rounded pill shape */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  transition: 0.3s ease, transform 0.3s ease;
+  z-index: 1000;
+}
+
+/* Hover effect */
+.about-btn:hover {
+  background-color: goldenrod;
+  transform: scale(1.05);
+}
+
+/* About Us Button */
+.about-btn {
+  position: fixed;          
+  top: 20px;
+  left: 20px;
+  padding: 10px 18px;
+  background-color: brown;  
+  color: #fff;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  border-radius: 25px;      
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  display: flex;            
+  align-items: center;
+  transition: 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 1000;
+}
+
+/* Star icon styling */
+.star-icon {
+  display: inline-block;
+  margin-left: 6px;
+  transition: 0.3s ease, filter 0.3s ease;
+}
+
+/* Hover effect for button */
+.about-btn:hover {
+  background-color: goldenrod;
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(255, 223, 0, 0.8), 0 0 40px rgba(255, 223, 0, 0.5);
+}
+
+/* Glow effect on the star itself */
+.about-btn:hover .star-icon {
+  filter: drop-shadow(0 0 6px gold) drop-shadow(0 0 10px goldenrod);
+  transform: scale(1.2);
+}
